@@ -8,7 +8,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BOT_TOKEN = "TOKEN AQUI"
 ADMIN_ID = 7178876305
-START_PY_PATH = "MHDDoS/start.py"
+START_PY_PATH = "/xd"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 db_lock = Lock()
@@ -44,7 +44,7 @@ def handle_start(message):
     if result:
         expiration_date = datetime.strptime(result[0], "%Y-%m-%d %H:%M:%S")
         if datetime.now() > expiration_date:
-            vip_status = "❌ *Seu plano VIP expirou.*"
+            vip_status = "❌ *Tu plan vip Expiró.*"
         else:
             dias_restantes = (expiration_date - datetime.now()).days
             vip_status = (
@@ -78,8 +78,8 @@ def handle_start(message):
             "💡 *Ejemplo:*"
             """
 ```
-/crash UDP 143.92.125.230:10013 10 900```\n"""
-            "⚠️ *Atenção:* Este bot foi criado apenas para fins educacionais."
+`/crash UDP 143.92.125.230:10013 10 900````\n"""
+            "💠 KrizzZModz 🇵🇪 OFC 💠."
         ),
         reply_markup=markup,
         parse_mode="Markdown",
@@ -89,14 +89,14 @@ def handle_start(message):
 @bot.message_handler(commands=["vip"])
 def handle_addvip(message):
     if message.from_user.id != ADMIN_ID:
-        bot.reply_to(message, "❌ No eres un vendededor autorizado.")
+        bot.reply_to(message, "🔰COMPRA AQUÍ🔰\n \n ÚNICO VENDEDOR: @KrizzZModzYT")
         return
 
     args = message.text.split()
     if len(args) != 3:
         bot.reply_to(
             message,
-            "❌ Formato inválido. Use: `/addvip <ID> <QUANTOS DIAS>`",
+            "❌ Formato inválido. Use: `/vip <ID> <QUANTOS DIAS>`",
             parse_mode="Markdown",
         )
         return
@@ -178,7 +178,7 @@ def handle_ping(message):
             f"⚙️ *Tipo:* {attack_type}\n"
             f"🧵 *Threads:* {threads}\n"
             f"⏳ *Tempo (ms):* {duration}\n\n"
-            f"*⚠️Creador⚠️* @KrizzZModYT"
+            f"*💠 KrizzZModz 🇵🇪 OFC 💠* "
         ),
         reply_markup=markup,
         parse_mode="Markdown",
